@@ -1,0 +1,164 @@
+[
+    {
+        "id": 1,
+        "category_Name": "Penthouse",
+        "estate_title": "Oceanfront Luxury Estate",
+        "image_url": "https://media.istockphoto.com/id/1393610514/photo/exterior-of-luxurious-modern-villa-with-swimming-pool-and-garden.jpg?s=612x612&w=0&k=20&c=GJySrcSKjCMhdo51EtRVOOMMWFJb3VsdFO4C1VSiOWU=",
+        "description": "Stunning oceanfront estate with breathtaking views of the Pacific. Features include a private beach, infinity pool, and modern design.",
+        "price": "$12,000,000",
+        "status": "sale",
+        "area": "7,500 sq ft",
+        "location": "Malibu, California",
+        "segment_name": "Luxury",
+        "facilities": [
+            "Infinity Pool",
+            "Private Beach Access",
+            "Home Theater",
+            "Spa"
+        ]
+    },
+    {
+        "id": 2,
+        "category_Name": "Penthouse",
+        "estate_title": "Exclusive Waterfront Villa",
+        "image_url": "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQhhJ29CsbkYg_PU7ryOpCDabbTBZojDV0G44IO3jcE0A&s",
+        "description": "Luxurious waterfront villa offering unparalleled elegance and sophistication. Features private dock, wine cellar, and lush gardens.",
+        "price": "$9,800,000",
+        "status": "sale",
+        "area": "6,200 sq ft",
+        "location": "Miami Beach, Florida",
+        "segment_name": "Luxury",
+        "facilities": [
+            "Private Dock",
+            "Wine Cellar",
+            "Gourmet Kitchen",
+            "Outdoor Dining Area"
+        ]
+    },
+    {
+        "id": 3,
+        "category_Name": "Beachfront Properties",
+        "estate_title": "Private Island Oasis",
+        "image_url": "https://img.freepik.com/premium-photo/alluring-image-exclusive-private-island-oasis-showcasing-lavish-villa-untouched-natural-beauty_875722-5692.jpg",
+        "description": "Escape to your own private island oasis surrounded by turquoise waters. Features luxury villas, spa retreat, and helipad.",
+        "price": "$20,000,000",
+        "status": "sale",
+        "area": "100 acres",
+        "location": "Maldives",
+        "segment_name": "Luxury",
+        "facilities": [
+            "Luxury Villas",
+            "Private Beaches",
+            "Spa Retreat",
+            "Helipad"
+        ]
+    },
+    {
+        "id": 4,
+        "category_Name": "Beachfront Properties",
+        "estate_title": "Grand European Chateau",
+        "image_url": "https://i.ibb.co/CsmkkCT/maxresdefault.jpg",
+        "description": "Exquisite European-style chateau set amidst manicured gardens and vineyards. Boasts opulent interiors, wine cellar, and tennis court.",
+        "price": "$15,500,000",
+        "status": "sale",
+        "area": "12,000 sq ft",
+        "location": "Provence, France",
+        "segment_name": "Luxury",
+        "facilities": [
+            "Wine Cellar",
+            "Tennis Court",
+            "Gardens",
+            "Guest Quarters"
+        ]
+    },
+    {
+        "id": 5,
+        "category_Name": "Resorts",
+        "estate_title": "Spectacular Mountain Retreat",
+        "image_url": "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcRrU1v8GjzdUu2FlMnRetmsmxCg48It-cRc0YwdkxShFA&s",
+        "description": "Spectacular mountain retreat offering panoramic views and unparalleled privacy. Features include a heated outdoor pool, sauna, and home theater.",
+        "price": "$7,900,000",
+        "status": "sale",
+        "area": "8,500 sq ft",
+        "location": "Aspen, Colorado",
+        "segment_name": "Luxury",
+        "facilities": [
+            "Heated Pool",
+            "Sauna",
+            "Home Theater",
+            "Wine Cellar"
+        ]
+    },
+    {
+        "id": 6,
+        "estate_title": "Modern Architectural Masterpiece",
+        "category_Name": "Resorts",
+        "image_url": "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcTvQqupyLbFb-8ayP-Fj-rpV8uIaNhKDeMekSrG11Hp2g&s",
+        "description": "Modern architectural masterpiece with sleek lines and luxurious amenities. Features infinity-edge pool, rooftop terrace, and smart home technology.",
+        "status": "sale",
+        "price": "$11,200,000",
+        "area": "6,800 sq ft",
+        "location": "Los Angeles, California",
+        "segment_name": "Luxury",
+        "facilities": [
+            "Infinity Pool",
+            "Rooftop Terrace",
+            "Smart Home System",
+            "Gym"
+        ]
+    },
+    {
+        "id": 7,
+        "category_Name": "Private Islands",
+        "estate_title": "Secluded Coastal Estate",
+        "image_url": "https://img.freepik.com/premium-photo/opulent-private-estate-nestled-secluded-beach-offering-exclusive-extravagant-summer-getaway_875722-9154.jpg",
+        "description": "Secluded coastal estate nestled among lush landscapes with stunning ocean views. Features private beach, infinity pool, and gourmet kitchen.",
+        "price": "$13,750,000",
+        "status": "sale",
+        "location": "Big Sur, California",
+        "area": "9,200 sq ft",
+        "segment_name": "Luxury",
+        "facilities": [
+            "Infinity Pool",
+            "Private Beach Access",
+            "Outdoor Kitchen",
+            "Home Gym"
+        ]
+    },
+    {
+        "id": 8,
+        "estate_title": "Luxury Ski Chalet",
+        "category_Name": "Villas",
+        "image_url": "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcR_eTOC7n-feYx_qIXyG6UBOn1sKvDboAECVJkDt0lsig&s",
+        "description": "Luxury ski chalet offering ski-in/ski-out access and breathtaking mountain views. Features include hot tub, home theater, and wine cellar.",
+        "price": "$6,950,000",
+        "status": "sale",
+        "area": "7,000 sq ft",
+        "location": "Whistler, British Columbia",
+        "segment_name": "Luxury",
+        "facilities": [
+            "Hot Tub",
+            "Ski-in/Ski-out Access",
+            "Home Theater",
+            "Wine Cellar"
+        ]
+    },
+    {
+        "id": 9,
+        "category_Name": "Mansions",
+        "estate_title": "Contemporary Waterfront Mansion",
+        "image_url": "https://images.mansionglobal.com/im-67680651?width=620",
+        "description": "Contemporary waterfront mansion with sleek design and panoramic views of the bay. Features private dock, infinity pool, and rooftop terrace.",
+        "status": "sale",
+        "area": "11,500 sq ft",
+        "location": "Bel Air, California",
+        "segment_name": "Luxury",
+        "facilities": [
+            "Private Dock",
+            "Infinity Pool",
+            "Rooftop Terrace",
+            "Home Automation"
+        ],
+        "price": "$18,500,000"
+    }
+]
