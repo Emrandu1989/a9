@@ -1,4 +1,5 @@
 import React from 'react';
+import { Link } from 'react-router-dom';
 
 const Estate = ({ item }) => {
     // console.log(item)
@@ -28,8 +29,8 @@ const Estate = ({ item }) => {
                          <h5>Area: {area}</h5>
                          <h5>Sagment: {segment_name}</h5>
                     </div>
-                    <div className="card-actions justify-end">
-                        <button className="btn btn-primary">Buy Now</button>
+                    <div  className="card-actions justify-end">
+                        <Link to={`/details/${id}`} className="btn btn-primary">Details</Link>
                     </div>
                 </div>
             </div>
