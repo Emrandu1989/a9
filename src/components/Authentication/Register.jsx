@@ -8,6 +8,7 @@ import { ToastContainer, toast } from 'react-toastify';
 import 'react-toastify/dist/ReactToastify.css';
 import { FaEye } from "react-icons/fa";
 import { useNavigate } from "react-router-dom";
+import { Helmet, } from 'react-helmet-async';
 
 const Register = () => {
     const [success, setSuccess] = useState(null);
@@ -85,6 +86,10 @@ const Register = () => {
 
     return (
         <>
+          <Helmet>
+        <title>Regal || Register</title>
+                </Helmet>
+
             <div className="hero min-h-screen bg-base-200">
                 <div className="hero-content w-2/4 flex-col">
                     <div className="text-center lg:text-left">

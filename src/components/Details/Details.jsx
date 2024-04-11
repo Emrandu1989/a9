@@ -2,7 +2,7 @@ import {
   useLoaderData,
   useParams
 } from "react-router-dom"
-
+import { Helmet, } from 'react-helmet-async';
 const Details = () => {
   const data = useLoaderData();
   const { id } = useParams();
@@ -26,6 +26,10 @@ const Details = () => {
 
   return (
     <>
+       <Helmet>
+        <title>Regal || Details</title>
+                </Helmet>
+
       <div className="card card-side bg-base-100 mt-20 shadow-xl ">
         <figure ><img className="w-[600px] h-full rounded-xl" src={image_url} alt={estate_title} /></figure>
         <div className="card-body ">
@@ -35,6 +39,7 @@ const Details = () => {
             <p>{category_Name}</p>
             <p>Price: <span className="text-red-600">{price}</span> </p>
             <p>Status: {status}</p>
+            <p>Area: {area}</p>
             <p>Location: {location}</p>
             <p>Segmenet: {segment_name}</p>
             <p>{facilities.join(', ')}</p>
