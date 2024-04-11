@@ -14,7 +14,7 @@ const Register = () => {
     const [success, setSuccess] = useState(null);
     const [error, setError] = useState(null)
     const [showAll, setShowAll] = useState(false)
-    const { createUser, googleLogin, gitHubLogin } = useContext(AuthContext);
+    const { createUser, googleLogin, gitHubLogin, loading } = useContext(AuthContext);
     const navigate = useNavigate()
     const handleRegister = (e) => {
         e.preventDefault();
@@ -90,7 +90,10 @@ const Register = () => {
         <title>Regal || Register</title>
                 </Helmet>
 
-            <div className="hero min-h-screen bg-base-200">
+                 {
+                    loading ? <div className="flex justify-center items-center"> <span className="loading text-orange-400 loading-bars loading-lg"></span>  </div> 
+                    : <>
+                       <div className="hero min-h-screen bg-base-200">
                 <div className="hero-content w-2/4 flex-col">
                     <div className="text-center lg:text-left">
                         <h1 className="text-4xl font-bold">Please Register</h1>
@@ -150,6 +153,9 @@ const Register = () => {
                 </div>
             </div>
             <ToastContainer />
+                    </>
+                 }
+                   
         </>
     );
 };

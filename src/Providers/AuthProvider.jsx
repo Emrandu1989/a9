@@ -12,6 +12,7 @@ export const AuthContext = createContext(null);
 
 const AuthProvider = ({ children }) => {
     const  [user,setUser] = useState()
+    const [loading,setLoading] = useState(true)
 
     const createUser =(email,password) =>{
          return  createUserWithEmailAndPassword(auth,email,password)
@@ -20,19 +21,23 @@ const AuthProvider = ({ children }) => {
     }
 
     const login = (email,password) =>{
+           setLoading(true)
           return signInWithEmailAndPassword(auth,email,password)
     }
 
     const logOut = () =>{
+        setLoading(true)
          return signOut(auth)
     }
 
 
       const googleLogin = () =>{
+        setLoading(true)
          return signInWithPopup(auth,googleProvider)
       }
       
       const gitHubLogin = () =>{
+        setLoading(true)
         return signInWithPopup(auth, gitHubProvider)
       }
 
@@ -42,6 +47,7 @@ const AuthProvider = ({ children }) => {
            const unsubscribe=  onAuthStateChanged(auth, currentUser =>{
                    setUser(currentUser);
                    console.log("currentUser",currentUser)
+                   setLoading(false)
             })
             return ()=>{
                    unsubscribe()
@@ -56,6 +62,7 @@ const AuthProvider = ({ children }) => {
         logOut,
         googleLogin,
         gitHubLogin,
+        loading
 
     }
     return (
