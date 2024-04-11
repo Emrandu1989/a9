@@ -7,6 +7,7 @@ import { FaGithub } from "react-icons/fa6";
 import { ToastContainer, toast } from 'react-toastify';
 import 'react-toastify/dist/ReactToastify.css';
 import { FaEye } from "react-icons/fa";
+import { useNavigate } from "react-router-dom";
 
 
 const Login = () => {
@@ -15,6 +16,7 @@ const Login = () => {
     const [error, setError] = useState(null)
      const [showAll, setShowAll] = useState(false)
     const {login} = useContext(AuthContext)
+    const navigate =  useNavigate()
 
     const handleLogin = (e) =>{
           e.preventDefault();
@@ -26,6 +28,10 @@ const Login = () => {
           .then(result=>{
             const loggedUser = result.user;
             console.log(loggedUser)
+            setSuccess(toast("User Login successfully"))
+            setTimeout(()=>{
+                 navigate('/')
+            },5000)
           })
           .catch(error=>{
             console.log(error)
@@ -37,7 +43,10 @@ const Login = () => {
         .then(result=>{
             const loggedUser = result.user;
             console.log(loggedUser)
-            setSuccess(toast("User Created Successfully"))
+            setSuccess(toast("User Login Successfully"))
+            setTimeout(()=>{
+                navigate('/')
+           },5000)
         })
         .catch(error=>{
             console.log(error)
@@ -49,7 +58,10 @@ const Login = () => {
         .then(result=>{
             const loggedUser = result.user;
             console.log(loggedUser)
-            setSuccess(toast("User Created Successfully"))
+            setSuccess(toast("User Login Successfully"))
+            setTimeout(()=>{
+                navigate('/')
+           },5000)
         })
         .catch(error=>{
             console.log(error)

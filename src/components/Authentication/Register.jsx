@@ -7,12 +7,14 @@ import { FaGithub } from "react-icons/fa6";
 import { ToastContainer, toast } from 'react-toastify';
 import 'react-toastify/dist/ReactToastify.css';
 import { FaEye } from "react-icons/fa";
+import { useNavigate } from "react-router-dom";
 
 const Register = () => {
      const [success, setSuccess] = useState(null);
      const [error, setError] = useState(null)
       const [showAll, setShowAll] = useState(false)
     const {createUser,googleLogin,gitHubLogin} = useContext(AuthContext);
+    const navigate =  useNavigate()
     const handleRegister = (e) =>{
          e.preventDefault();
          const form = e.target;
@@ -31,7 +33,10 @@ const Register = () => {
             const loggedUser = result.user;
             console.log(loggedUser)
             setSuccess(toast("User Created Successfully"))
-
+            setTimeout(()=>{
+                 navigate('/')
+            }, 5000)
+             
             updateProfile(loggedUser,{
                 displayName: name,
                 photoURL: imageUrl
@@ -49,7 +54,11 @@ const Register = () => {
         .then(result=>{
             const loggedUser = result.user;
             console.log(loggedUser)
-            setSuccess(toast("User Created Successfully"))
+            setSuccess(toast("User Login Successfully"))
+            setTimeout(()=>{
+                navigate('/')
+           }, 5000)
+          
         })
         .catch(error=>{
             console.log(error)
@@ -61,7 +70,11 @@ const Register = () => {
         .then(result=>{
             const loggedUser = result.user;
             console.log(loggedUser)
-            setSuccess(toast("User Created Successfully"))
+            setSuccess(toast("User Login Successfully"))
+            setTimeout(()=>{
+                navigate('/')
+           }, 5000)
+            
         })
         .catch(error=>{
             console.log(error)
