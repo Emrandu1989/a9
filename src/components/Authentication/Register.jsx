@@ -10,79 +10,79 @@ import { FaEye } from "react-icons/fa";
 import { useNavigate } from "react-router-dom";
 
 const Register = () => {
-     const [success, setSuccess] = useState(null);
-     const [error, setError] = useState(null)
-      const [showAll, setShowAll] = useState(false)
-    const {createUser,googleLogin,gitHubLogin} = useContext(AuthContext);
-    const navigate =  useNavigate()
-    const handleRegister = (e) =>{
-         e.preventDefault();
-         const form = e.target;
-         const name = form.name.value;
-         const email = form.email.value;
-         const password = form.password.value;
-         const imageUrl = form.ImageUrl.value;
-         console.log(name,email,password,imageUrl);
+    const [success, setSuccess] = useState(null);
+    const [error, setError] = useState(null)
+    const [showAll, setShowAll] = useState(false)
+    const { createUser, googleLogin, gitHubLogin } = useContext(AuthContext);
+    const navigate = useNavigate()
+    const handleRegister = (e) => {
+        e.preventDefault();
+        const form = e.target;
+        const name = form.name.value;
+        const email = form.email.value;
+        const password = form.password.value;
+        const imageUrl = form.ImageUrl.value;
+        console.log(name, email, password, imageUrl);
 
-          if(!/^(?=.*[a-z])(?=.*[A-Z]).{6,}$/.test(password)){
+        if (!/^(?=.*[a-z])(?=.*[A-Z]).{6,}$/.test(password)) {
             setError(toast("password must have atleaset 6 character one upperCase and one lowerCase"))
             return
-         }
-         createUser(email,password,name,imageUrl)
-         .then(result=>{
-            const loggedUser = result.user;
-            console.log(loggedUser)
-            setSuccess(toast("User Created Successfully"))
-            setTimeout(()=>{
-                 navigate('/')
-            }, 5000)
-             
-            updateProfile(loggedUser,{
-                displayName: name,
-                photoURL: imageUrl
+        }
+        createUser(email, password, name, imageUrl)
+            .then(result => {
+                const loggedUser = result.user;
+                console.log(loggedUser)
+                setSuccess(toast("User Created Successfully"))
+                setTimeout(() => {
+                    navigate('/')
+                }, 5000)
+
+                updateProfile(loggedUser, {
+                    displayName: name,
+                    photoURL: imageUrl
+                })
             })
-         })
-         .catch(error=>{
-            console.log(error)
-            setError(toast(error.message))
-         })
+            .catch(error => {
+                console.log(error)
+                setError(toast(error.message))
+            })
 
     }
 
-    const handleGoogleSignUp = () =>{
+    const handleGoogleSignUp = () => {
         googleLogin()
-        .then(result=>{
-            const loggedUser = result.user;
-            console.log(loggedUser)
-            setSuccess(toast("User Login Successfully"))
-            setTimeout(()=>{
-                navigate('/')
-           }, 5000)
-          
-        })
-        .catch(error=>{
-            console.log(error)
-            setError(toast(error.message))
-        })
+            .then(result => {
+                const loggedUser = result.user;
+                console.log(loggedUser)
+                setSuccess(toast("User Login Successfully"))
+                setTimeout(() => {
+                    navigate('/')
+                }, 5000)
+
+            })
+            .catch(error => {
+                console.log(error)
+                setError(toast(error.message))
+            })
     }
-    const handleGitHubSignUp = () =>{
+    const handleGitHubSignUp = () => {
         gitHubLogin()
-        .then(result=>{
-            const loggedUser = result.user;
-            console.log(loggedUser)
-            setSuccess(toast("User Login Successfully"))
-            setTimeout(()=>{
-                navigate('/')
-           }, 5000)
-            
-        })
-        .catch(error=>{
-            console.log(error)
-            setError(toast(error.message))
-        })
+            .then(result => {
+                const loggedUser = result.user;
+                console.log(loggedUser)
+                setSuccess(toast("User Login Successfully"))
+                setTimeout(() => {
+                    navigate('/')
+                }, 5000)
+
+            })
+            .catch(error => {
+                console.log(error)
+                setError(toast(error.message))
+            })
     }
 
-    
+
     return (
         <>
             <div className="hero min-h-screen bg-base-200">
@@ -105,16 +105,16 @@ const Register = () => {
                                 </label>
                                 <input type="email" placeholder="email" name="email" className="input input-bordered" required />
                             </div>
-                            
+
                             <div className="form-control  relative">
                                 <label className="label">
                                     <span className="label-text">Password</span>
                                 </label>
                                 <input type={showAll ? "text" : "password"}
-                                 placeholder="password"
-                                  name="password" className="input input-bordered" required />
+                                    placeholder="password"
+                                    name="password" className="input input-bordered" required />
 
-                                <Link className="absolute top-12 right-5 text-2xl" onClick={()=> setShowAll(!showAll) }> {showAll ? <FaEyeSlash />  :<FaEye />}  </Link>
+                                <Link className="absolute top-12 right-5 text-2xl" onClick={() => setShowAll(!showAll)}> {showAll ? <FaEyeSlash /> : <FaEye />}  </Link>
 
                             </div>
                             <div className="form-control">
@@ -128,19 +128,19 @@ const Register = () => {
                                 <button className="btn btn-primary">Register</button>
                             </div>
                             <p className="text-center text-xl py-2"> Already Have an account Please <Link className=" text-xl btn-link" to={"/login"}>Login</Link> </p>
-                               <div className="text-center">
-                                    <p className="text-2xl font-bold">Or</p>
-                               </div>
+                            <div className="text-center">
+                                <p className="text-2xl font-bold">Or</p>
+                            </div>
 
                             <div className="flex justify-center my-1.5">
-                                 <button onClick={handleGoogleSignUp} className="btn text-2xl"><FaGoogle /></button>
-                                 <button onClick={handleGitHubSignUp} className="btn text-2xl"><FaGithub /></button>
+                                <button onClick={handleGoogleSignUp} className="btn text-2xl"><FaGoogle /></button>
+                                <button onClick={handleGitHubSignUp} className="btn text-2xl"><FaGithub /></button>
                             </div>
 
                         </form>
 
-                        
-                          
+
+
                     </div>
                 </div>
             </div>

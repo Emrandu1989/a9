@@ -4,11 +4,13 @@ import Home from "../components/Home/Home";
 import Details from "../components/Details/Details";
 import Register from "../components/Authentication/Register";
 import Login from "../components/Authentication/Login";
+import ErrorPage from "../components/ErrorPage/ErrorPage";
 
 const router = createBrowserRouter([
     {
       path: "/",
       element: <MainLayout/>,
+    
       children:[
           {
             path:'/',
@@ -30,5 +32,9 @@ const router = createBrowserRouter([
           },
       ]
     },
+    {
+      path:'*',
+      element:<ErrorPage />
+    }
   ]);
   export default router
