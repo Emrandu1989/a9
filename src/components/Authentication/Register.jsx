@@ -1,13 +1,18 @@
-import { useContext } from "react";
+import { useContext, useState } from "react";
 import { Link } from "react-router-dom";
 import { AuthContext } from "../../Providers/AuthProvider";
 import { updateProfile } from "firebase/auth";
-import { FaGoogle } from "react-icons/fa";
+import { FaEyeSlash, FaGoogle } from "react-icons/fa";
 import { FaGithub } from "react-icons/fa6";
-
+import { ToastContainer, toast } from 'react-toastify';
+import 'react-toastify/dist/ReactToastify.css';
+import { FaEye } from "react-icons/fa";
 
 const Register = () => {
-    const {createUser,googleLogin} = useContext(AuthContext);
+     const [success, setSuccess] = useState(null);
+     const [error, setError] = useState(null)
+      const [showAll, setShowAll] = useState(false)
+    const {createUser,googleLogin,gitHubLogin} = useContext(AuthContext);
     const handleRegister = (e) =>{
          e.preventDefault();
          const form = e.target;
@@ -16,10 +21,16 @@ const Register = () => {
          const password = form.password.value;
          const imageUrl = form.ImageUrl.value;
          console.log(name,email,password,imageUrl);
+
+          if(!/^(?=.*[a-z])(?=.*[A-Z]).{6,}$/.test(password)){
+            setError(toast("password must have atleaset 6 character one upperCase and one lowerCase"))
+            return
+         }
          createUser(email,password,name,imageUrl)
          .then(result=>{
             const loggedUser = result.user;
             console.log(loggedUser)
+            setSuccess(toast("User Created Successfully"))
 
             updateProfile(loggedUser,{
                 displayName: name,
@@ -28,6 +39,7 @@ const Register = () => {
          })
          .catch(error=>{
             console.log(error)
+            setError(toast(error.message))
          })
 
     }
@@ -37,11 +49,27 @@ const Register = () => {
         .then(result=>{
             const loggedUser = result.user;
             console.log(loggedUser)
+            setSuccess(toast("User Created Successfully"))
         })
         .catch(error=>{
             console.log(error)
+            setError(toast(error.message))
         })
     }
+    const handleGitHubSignUp = () =>{
+        gitHubLogin()
+        .then(result=>{
+            const loggedUser = result.user;
+            console.log(loggedUser)
+            setSuccess(toast("User Created Successfully"))
+        })
+        .catch(error=>{
+            console.log(error)
+            setError(toast(error.message))
+        })
+    }
+
+    
     return (
         <>
             <div className="hero min-h-screen bg-base-200">
@@ -51,7 +79,7 @@ const Register = () => {
 
                     </div>
                     <div className="card  w-full  shadow-2xl bg-base-100">
-                        <form onSubmit={handleRegister } className="card-body">
+                        <form onSubmit={handleRegister} className="card-body">
                             <div className="form-control">
                                 <label className="label">
                                     <span className="label-text">Name</span>
@@ -64,11 +92,16 @@ const Register = () => {
                                 </label>
                                 <input type="email" placeholder="email" name="email" className="input input-bordered" required />
                             </div>
-                            <div className="form-control">
+                            
+                            <div className="form-control  relative">
                                 <label className="label">
                                     <span className="label-text">Password</span>
                                 </label>
-                                <input type="password" placeholder="password" name="password" className="input input-bordered" required />
+                                <input type={showAll ? "text" : "password"}
+                                 placeholder="password"
+                                  name="password" className="input input-bordered" required />
+
+                                <Link className="absolute top-12 right-5 text-2xl" onClick={()=> setShowAll(!showAll) }> {showAll ? <FaEyeSlash />  :<FaEye />}  </Link>
 
                             </div>
                             <div className="form-control">
@@ -88,12 +121,17 @@ const Register = () => {
 
                             <div className="flex justify-center my-1.5">
                                  <button onClick={handleGoogleSignUp} className="btn text-2xl"><FaGoogle /></button>
-                                 <button onClick={handleGoogleSignUp} className="btn text-2xl"><FaGithub /></button>
+                                 <button onClick={handleGitHubSignUp} className="btn text-2xl"><FaGithub /></button>
                             </div>
+
                         </form>
+
+                        
+                          
                     </div>
                 </div>
             </div>
+            <ToastContainer />
         </>
     );
 };
