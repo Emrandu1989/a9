@@ -1,13 +1,28 @@
+import { useContext } from "react";
 import { Link, NavLink } from "react-router-dom";
+import { AuthContext } from "../../Providers/AuthProvider";
+
 
 
 const NavBar = () => {
+      const {user, logOut} = useContext(AuthContext);
     const links = <>
              <li> <NavLink className={'hover:text-orange-500'} to='/'>Home</NavLink> </li>
              <li> <NavLink className={'hover:text-orange-500'} to='/about'>About</NavLink> </li>
              <li> <NavLink className={'hover:text-orange-500'} to='/properties'>Properties</NavLink> </li>
-             <li> <NavLink className={'hover:text-orange-500'} to='/blog'>Blog</NavLink> </li>
+             <li> <NavLink className={'hover:text-orange-500'} to='/blog'>Blog</NavLink> </li> 
+             
     </>
+
+    const handleLogOut = () =>{
+           logOut()
+           .then(result=>{
+           
+           })
+           .catch(error=>{
+            console.log(error)
+           })
+    }
     return (
         <>
             <div className="navbar bg-[#f7f7f7]">
@@ -32,11 +47,20 @@ const NavBar = () => {
   <a className="btn btn-ghost text-xl">Regal Residences</a>
   <div className="navbar-end">
   <div className="avatar">
-  <div className="w-9 rounded-full ring ring-primary ring-offset-base-100 ring-offset-2">
-    <img src="https://daisyui.com/images/stock/photo-1534528741775-53994a69daeb.jpg" />
-  </div>
+
+    
+    {
+      user &&    <div className="w-9 rounded-full ring ring-primary ring-offset-base-100 ring-offset-2">
+      <img title={user.displayName} src={user.photoURL} />
+    </div>
+    }
+
 </div>
-    <Link className="btn">Login</Link>
+     <div className="ml-5">
+     {
+        user ? <button onClick={handleLogOut}>LogOut</button> :    <Link to='/login' className="btn">Login</Link>
+     }
+     </div>
   </div>
 </div>
         </>

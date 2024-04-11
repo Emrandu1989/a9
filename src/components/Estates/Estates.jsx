@@ -38,7 +38,7 @@ const Estates = ({ }) => {
 
 
     return (
-        <>
+        <div className="p-4 md:p-0">
             <div className="my-5 flex flex-wrap gap-5">
                 <button
                     className={`btn ${activeCategory === "All" ? 'text-white rounded-xl h-[20px] bg-[#B89146] border-none font-[400] text-[15px]' : ''}`}
@@ -47,10 +47,10 @@ const Estates = ({ }) => {
                     All
                 </button>
                 {
-                    category.map(data => <Link onClick={() => handleCategoryClick(data.category_Name)}    className={`btn ${activeCategory === data.category_Name ? 'text-white rounded-xl h-[20px] bg-[#B89146] border-none font-[400] text-[15px]' : ''}`}>{data.category_Name} </Link>)
+                    category.map(data => <Link onClick={() => handleCategoryClick(data.category_Name)} className={`btn ${activeCategory === data.category_Name ? 'text-white rounded-xl h-[20px] bg-[#B89146] border-none font-[400] text-[15px]' : ''}`}>{data.category_Name} </Link>)
                 }
             </div>
-            <div className="grid grid-cols-3 gap-4">
+            <div className="grid  grid-cols-1 md:grid-cols-3 gap-5">
                 {
                     displayedRooms.map(item => <Estate
                         key={item.id}
@@ -58,7 +58,7 @@ const Estates = ({ }) => {
                     />)
                 }
             </div>
-        </>
+        </div>
     );
 };
 
