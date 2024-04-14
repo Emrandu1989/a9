@@ -4,3 +4,21 @@
        background-size: cover;
        background-repeat: no-repeat;
 }
+.slide-2{
+       background: linear-gradient(#0000009c,#ffffff2a) ,url('https://plus.unsplash.com/premium_photo-1661903136240-a97367001a64?q=80&w=1470&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D');
+       background-position: center;
+       background-size: cover;
+       background-repeat: no-repeat;
+}
+.slide-3{
+       background: linear-gradient(#00000098,#ffffff2a) ,url('https://plus.unsplash.com/premium_photo-1661962495669-d72424626bdc?q=80&w=1471&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D');
+       background-position: center;
+       background-size: cover;
+       background-repeat: no-repeat;
+}
+.slide-4{
+       background: linear-gradient(#0000008a,#ffffff2a) ,url('https://plus.unsplash.com/premium_photo-1661963239507-7bdf41a5e66b?q=80&w=1423&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D');
+       background-position: center;
+       background-size: cover;
+       background-repeat: no-repeat;
+}
