@@ -16,9 +16,9 @@ const NavBar = () => {
       const {user, logOut} = useContext(AuthContext);
     const links = <>
              <li> <NavLink data-aos="fade-left" className={'hover:text-orange-500'} to='/'>Home</NavLink> </li>
-             <li> <NavLink data-aos="fade-left" className={'hover:text-orange-500'} to='/about'>About</NavLink> </li>
+           
              <li> <NavLink data-aos="fade-left" className={'hover:text-orange-500'} to='/properties'>Properties</NavLink> </li>
-             <li> <NavLink data-aos="fade-left" className={'hover:text-orange-500'} to='/blog'>Blog</NavLink> </li> 
+             <li> <NavLink data-aos="fade-left" className={'hover:text-orange-500'} to='/about'>AboutUs</NavLink> </li> 
              
     </>
 
