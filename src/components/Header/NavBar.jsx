@@ -2,22 +2,32 @@ import { useContext } from "react";
 import { Link, NavLink } from "react-router-dom";
 import { AuthContext } from "../../Providers/AuthProvider";
 
+import Aos from 'aos';
+import 'aos/dist/aos.css'
+import { useEffect } from 'react';
+
 
 
 const NavBar = () => {
+ useEffect(()=>{
+         Aos.init({duration: 1000})
+    },[])
+
       const {user, logOut} = useContext(AuthContext);
     const links = <>
-             <li> <NavLink className={'hover:text-orange-500'} to='/'>Home</NavLink> </li>
-             <li> <NavLink className={'hover:text-orange-500'} to='/about'>About</NavLink> </li>
-             <li> <NavLink className={'hover:text-orange-500'} to='/properties'>Properties</NavLink> </li>
-             <li> <NavLink className={'hover:text-orange-500'} to='/blog'>Blog</NavLink> </li> 
+             <li> <NavLink data-aos="fade-left" className={'hover:text-orange-500'} to='/'>Home</NavLink> </li>
+             <li> <NavLink data-aos="fade-left" className={'hover:text-orange-500'} to='/about'>About</NavLink> </li>
+             <li> <NavLink data-aos="fade-left" className={'hover:text-orange-500'} to='/properties'>Properties</NavLink> </li>
+             <li> <NavLink data-aos="fade-left" className={'hover:text-orange-500'} to='/blog'>Blog</NavLink> </li> 
              
     </>
 
     const handleLogOut = () =>{
            logOut()
            .then(result=>{
-           
+              setTimeout(()=>{
+                alert('user logOut Successfull😭')
+              },2000)
            })
            .catch(error=>{
             console.log(error)
@@ -44,7 +54,9 @@ const NavBar = () => {
   </div>
   </div>
  
-  <a className="btn btn-ghost text-xl">Regal Residences</a>
+  <a 
+   data-aos="fade-left"
+  className="btn btn-ghost text-xl">Regal Residences</a>
   <div className="navbar-end">
   <div className="avatar">
 
@@ -58,7 +70,11 @@ const NavBar = () => {
 </div>
      <div className="ml-5">
      {
-        user ? <button onClick={handleLogOut}>LogOut</button> :    <Link to='/login' className="btn">Login</Link>
+        user ? <button
+        data-aos="fade-left"
+        onClick={handleLogOut}>LogOut</button> :    <Link to='/login' 
+        data-aos="fade-left"
+        className="btn">Login</Link>
      }
      </div>
   </div>
