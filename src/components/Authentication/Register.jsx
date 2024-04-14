@@ -34,9 +34,22 @@ const Register = () => {
                 const loggedUser = result.user;
                 console.log(loggedUser)
                 setSuccess(toast("User Created Successfully"))
+                 
+                // update profile
+                   updateProfile(result.user, {
+                        displayName: name,
+                        photoURL:imageUrl
+                   })
+                   .then(()=>{
+                      console.log("profile Updated")
+                   })
+                   .catch(error=>{
+                      console.log(error)
+                   })
+
                 setTimeout(() => {
                     navigate('/')
-                }, 5000)
+                }, 4000)
 
                 updateProfile(loggedUser, {
                     displayName: name,

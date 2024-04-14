@@ -15,19 +15,18 @@ const NavBar = () => {
 
       const {user, logOut} = useContext(AuthContext);
     const links = <>
-             <li> <NavLink data-aos="fade-left" className={'hover:text-orange-500'} to='/'>Home</NavLink> </li>
+             <li> <NavLink  className={'hover:text-orange-500'} to='/'>Home</NavLink> </li>
            
-             <li> <NavLink data-aos="fade-left" className={'hover:text-orange-500'} to='/properties'>Properties</NavLink> </li>
-             <li> <NavLink data-aos="fade-left" className={'hover:text-orange-500'} to='/about'>AboutUs</NavLink> </li> 
+             <li> <NavLink  className={'hover:text-orange-500'} to='/properties'>Properties</NavLink> </li>
+             <li> <NavLink  className={'hover:text-orange-500'} to='/about'>AboutUs</NavLink> </li> 
+             <li> <NavLink  className={'hover:text-orange-500'} to='/updateProfile'>UpdateProfile</NavLink> </li>
              
     </>
 
     const handleLogOut = () =>{
            logOut()
            .then(result=>{
-              setTimeout(()=>{
-                alert('user logOut Successfull😭')
-              },2000)
+              console.log(result.user)
            })
            .catch(error=>{
             console.log(error)

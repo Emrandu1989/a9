@@ -48,9 +48,9 @@ const Login = () => {
             console.log(loggedUser)
             setSuccess(toast("User Login Successfully"))
            
-            setTimeout(()=>{
+           
                 navigate(location?.state ? location.state : '/')
-           },1000)
+          
         })
         .catch(error=>{
             console.log(error)
