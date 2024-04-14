@@ -30,8 +30,8 @@ const Details = () => {
         <title>Regal || Details</title>
                 </Helmet>
 
-      <div className="card card-side bg-base-100 mt-20 shadow-xl ">
-        <figure ><img className="w-[600px] h-full rounded-xl" src={image_url} alt={estate_title} /></figure>
+      <div className="card card-side bg-base-100 mt-20 shadow-xl flex flex-col md:flex-row ">
+        <figure ><img className="md:w-[600px] h-full rounded-xl" src={image_url} alt={estate_title} /></figure>
         <div className="card-body ">
           <h2 className="card-title text-3xl">{estate_title}</h2>
           <div className="text-xl text-gray-600 font-semibold">

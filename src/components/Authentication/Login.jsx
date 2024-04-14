@@ -84,7 +84,7 @@ const Login = () => {
                 {
                     loading ?  <div className="flex justify-center items-center"> <span className="loading text-orange-400 loading-bars loading-lg"></span>  </div> : <> 
                       <div className="hero min-h-screen bg-base-200">
-            <div className="hero-content w-2/4 flex-col">
+            <div className="hero-content w-full  md:w-2/4 flex-col">
                 <div className="text-center lg:text-left">
                     <h1 className="text-4xl font-bold">Please Login</h1>
 

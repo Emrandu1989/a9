@@ -1,12 +1,15 @@
-import  { useEffect } from 'react';
+import  { useContext, useEffect } from 'react';
 import Swiper from 'swiper';
 import 'swiper/css';
 import 'swiper/css/effect-coverflow';
 import 'swiper/css/effect-fade';
 import 'animate.css';
 import { Helmet } from 'react-helmet-async';
+import { AuthContext } from '../../Providers/AuthProvider';
 
 const About = () => {
+     const {loading} = useContext(AuthContext)
+  
     useEffect(() => {
         const swiper = new Swiper('.swiper-container', {
 
