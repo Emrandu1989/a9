@@ -28,7 +28,7 @@ const Estate = ({ item }) => {
                         <h5>Sagment: {segment_name}</h5>
                     </div>
                     <div className="card-actions justify-end mt-3">
-                        <Link to={`/details/${id}`} className="btn btn-primary">Details</Link>
+                        <Link to={`/details/${id}`} className="btn btn-primary">View Property</Link>
                     </div>
                 </div>
 
