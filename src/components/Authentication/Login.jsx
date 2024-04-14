@@ -1,5 +1,5 @@
 import { useContext, useState } from "react";
-import { Link } from "react-router-dom";
+import { Link, useLocation } from "react-router-dom";
 import { AuthContext } from "../../Providers/AuthProvider";
 
 import { FaEyeSlash, FaGoogle } from "react-icons/fa";
@@ -18,6 +18,7 @@ const Login = () => {
      const [showAll, setShowAll] = useState(false)
     const {login} = useContext(AuthContext)
     const navigate =  useNavigate()
+    const location = useLocation()
 
     const handleLogin = (e) =>{
           e.preventDefault();
@@ -30,9 +31,10 @@ const Login = () => {
             const loggedUser = result.user;
             console.log(loggedUser)
             setSuccess(toast("User Login successfully"))
+            
             setTimeout(()=>{
-                 navigate('/')
-            },5000)
+                navigate(location?.state ? location.state : '/')
+            },1000)
           })
           .catch(error=>{
             console.log(error)
@@ -45,9 +47,10 @@ const Login = () => {
             const loggedUser = result.user;
             console.log(loggedUser)
             setSuccess(toast("User Login Successfully"))
+           
             setTimeout(()=>{
-                navigate('/')
-           },5000)
+                navigate(location?.state ? location.state : '/')
+           },1000)
         })
         .catch(error=>{
             console.log(error)
@@ -60,9 +63,10 @@ const Login = () => {
             const loggedUser = result.user;
             console.log(loggedUser)
             setSuccess(toast("User Login Successfully"))
+           
             setTimeout(()=>{
-                navigate('/')
-           },5000)
+                navigate(location?.state ? location.state : '/')
+           },1000)
         })
         .catch(error=>{
             console.log(error)
