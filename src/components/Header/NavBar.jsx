@@ -19,7 +19,9 @@ const NavBar = () => {
            
              <li> <NavLink  className={'hover:text-orange-500'} to='/properties'>Properties</NavLink> </li>
              <li> <NavLink  className={'hover:text-orange-500'} to='/about'>AboutUs</NavLink> </li> 
-             <li> <NavLink  className={'hover:text-orange-500'} to='/updateProfile'>UpdateProfile</NavLink> </li>
+             {
+                user && <li> <NavLink  className={'hover:text-orange-500'} to='/updateProfile'>UpdateProfile</NavLink> </li>
+             }
              
     </>
 
